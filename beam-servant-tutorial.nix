@@ -6,7 +6,7 @@ mkDerivation {
   isLibrary = true;
   isExecutable = true;
   libraryHaskellDepends = [ aeson base ];
-  executableHaskellDepends = [ base ];
+  executableHaskellDepends = [ aeson base ];
   doHaddock = false;
   license = "unknown";
   hydraPlatforms = stdenv.lib.platforms.none;

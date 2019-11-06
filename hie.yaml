@@ -1,0 +1,6 @@
+cradle:
+  direct:
+    arguments:
+      - -no-user-package-db
+      - -Wall
+      - -fdefer-typed-holes
