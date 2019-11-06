@@ -1,1 +1,5 @@
 * TODO add nix-mode
+[[https://github.com/NixOS/nix-mode][nix-mode]]
+
+* TODO add .gitignore
+* TODO try the painless haskell servant example
