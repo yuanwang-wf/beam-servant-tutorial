@@ -1,5 +1,9 @@
 * TODO add nix-mode
 [[https://github.com/NixOS/nix-mode][nix-mode]]
 
-* TODO add .gitignore
+* DONE add .gitignore
+  CLOSED: [2019-11-06 Wed 09:43]
 * TODO try the painless haskell servant example
+
+* Setup 
+https://github.com/digital-asset/ghcide/issues/137
