@@ -19,5 +19,4 @@ pkgs.stdenv.mkDerivation {
      export NIX_GHCPKGS="ghc-pkg"
      export NIX_GHC_LIBDIR=$( $NIX_GHC --print-libdir )
   '';
-
 }

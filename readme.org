@@ -1,9 +1,16 @@
-* TODO add nix-mode
+* DONE add nix-mode
+  CLOSED: [2019-11-06 Wed 10:08]
 [[https://github.com/NixOS/nix-mode][nix-mode]]
+- add nix-mode to additional packages
+- `(add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))` to user-config
+* TODO figure out othr nix-mode commands
+   M-x nix-unpack 
+   nix-build
+   M-x nix-repl
 
 * DONE add .gitignore
   CLOSED: [2019-11-06 Wed 09:43]
 * TODO try the painless haskell servant example
 
-* Setup 
+* Setup (currently spacemacs + nix + ghcide) 
 https://github.com/digital-asset/ghcide/issues/137
