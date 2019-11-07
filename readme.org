@@ -14,3 +14,5 @@
 
 * Setup (currently spacemacs + nix + ghcide) 
 https://github.com/digital-asset/ghcide/issues/137
+
+https://stackoverflow.com/questions/58326843/equivalent-of-passing-p-zlib-argument-to-nix-shell-in-shell-nix/58349420#58349420

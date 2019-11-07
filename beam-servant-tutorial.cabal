@@ -28,6 +28,10 @@ executable beam-servant-tutorial
   -- other-extensions:
   build-depends:       base >=4.12 && <4.13
                      , beam-servant-tutorial
-                     , aeson 
+                     , aeson
+                     , containers
+                     , servant
+                     , servant-server
+                     , warp
   hs-source-dirs:      app
   default-language:    Haskell2010

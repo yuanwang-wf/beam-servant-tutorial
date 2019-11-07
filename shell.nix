@@ -4,16 +4,15 @@ let
   inherit (pkgs) haskellPackages;
   ghcPackages = haskellPackages.ghcWithPackages (p: with p; [
      aeson
+     servant
+     servant-server
   ]);
-
   project = import ./release.nix;
 in
 pkgs.mkShell {
   buildInputs = project.env.nativeBuildInputs ++ [
     haskellPackages.cabal-install
-    (import (builtins.fetchTarball
-      "https://github.com/hercules-ci/ghcide-nix/tarball/master"
-    ) {}).ghcide-ghc865
+    pkgs.zlib
   ];
   LC_ALL = "en_US.UTF-8";
   shellHook = ''
