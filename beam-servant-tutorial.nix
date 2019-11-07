@@ -1,5 +1,5 @@
 { mkDerivation, aeson, base, containers, servant, servant-server
-, stdenv, warp, zlib
+, stdenv, warp
 }:
 mkDerivation {
   pname = "beam-servant-tutorial";
@@ -11,7 +11,6 @@ mkDerivation {
   executableHaskellDepends = [
     aeson base containers servant servant-server warp
   ];
-  executableSystemDepends = [zlib];
   doHaddock = false;
   license = "unknown";
   hydraPlatforms = stdenv.lib.platforms.none;

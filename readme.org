@@ -2,6 +2,15 @@
 
 * Setup 
 spacemacs + nix + ghcide
+** Editors
+  We can setup a decent haskell development environment with emacs, vim or vscode.
+** nix, stack or just plain cabal 
+The last I want to do is to drag anyone into build tool war.
+** editor support
+- Haskell-IDE-Engine
+- ghcide
+- dante
+- ghcid 
 
 * Hello World (or hello alpaca ?)
 
