@@ -2,11 +2,13 @@
 let
   inherit (nixpkgs) pkgs;
   inherit (pkgs) haskellPackages;
+  ghcPackages = haskellPackages.ghcWithPackages (p: with p; [
+     aeson
+  ]);
 
   project = import ./release.nix;
 in
-pkgs.stdenv.mkDerivation {
-  name = "shell";
+pkgs.mkShell {
   buildInputs = project.env.nativeBuildInputs ++ [
     haskellPackages.cabal-install
     (import (builtins.fetchTarball
@@ -15,8 +17,8 @@ pkgs.stdenv.mkDerivation {
   ];
   LC_ALL = "en_US.UTF-8";
   shellHook = ''
-     export NIX_GHC="ghc"
-     export NIX_GHCPKGS="ghc-pkg"
+     export NIX_GHC="${ghcPackages}/bin/ghc"
+     export NIX_GHCPKGS="${ghcPackages}]bin/ghc-pkg"
      export NIX_GHC_LIBDIR=$( $NIX_GHC --print-libdir )
   '';
 }
