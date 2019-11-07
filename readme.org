@@ -1,7 +1,12 @@
-#+TITLE: A tutorial about using servant and beam for haskell new commers 
+#+TITLE: A tutorial about servant and beam for haskell new commers 
 
 * Setup 
 spacemacs + nix + ghcide
 
 * Hello World (or hello alpaca ?)
 
+* References
+- https://blog.latukha.com/NixOS-HIE-Emacs/
+- https://www.youtube.com/watch?v=idU7GdlfP9Q
+- https://github.com/digital-asset/ghcide/issues/137
+- https://github.com/Gabriel439/haskell-nix
