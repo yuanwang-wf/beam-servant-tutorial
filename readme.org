@@ -1,18 +1,27 @@
 #+TITLE: A tutorial about servant and beam for haskell new commers 
 
 * Setup 
+If you already have a produtive haskell development environment, please skip this section.
+Setuping a development environment is probably the worst place about picking any new language.
+
 spacemacs + nix + ghcide
 ** Editors
   We can setup a decent haskell development environment with emacs, vim or vscode.
 ** nix, stack or just plain cabal 
-The last I want to do is to drag anyone into build tool war.
+The last I want to do is to drag anyone into so call build tool war.
 ** editor support
-- Haskell-IDE-Engine
-- ghcide
-- dante
-- ghcid 
+- [[https://github.com/haskell/haskell-ide-engine][haskell-ide-engine]]
+- [[https://github.com/digital-asset/ghcide][ghcide]]
+- [[https://github.com/jyp/dante][dante]]
+- [[https://github.com/ndmitchell/ghcid][ghcid]] 
+- [[https://github.com/leksah/leks][Leksah]] (a truely IDE for haskell)
+*** haskell-ide-engine
+Currently, hie has something [[https://github.com/haskell/haskell-ide-engine/issues/1376][issues]] work with cabal 3.
 
 * Hello World (or hello alpaca ?)
+I really enjoy [[https://twitter.com/rabbitonweb][Paweł Szulc's ]][[https://www.youtube.com/watch?v=idU7GdlfP9Q][talk]] at Lambda World 2019. 
+[[https://haskell-servant.readthedocs.io/en/v0.8/tutorial/index.html][
+Servant Tutorial]] 
 
 * References
 - https://blog.latukha.com/NixOS-HIE-Emacs/
