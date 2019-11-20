@@ -1,4 +1,15 @@
+{ nixpkgs ? import <nixpkgs> {}, compiler ? "ghc865" }:
+
 let
-  pkgs = import <nixpkgs> { };
+  inherit (nixpkgs) pkgs;
+  
+  f = import ./default.nix;
+
+  haskellPackages = if compiler == "default"
+                       then pkgs.haskellPackages
+                       else pkgs.haskell.packages.${compiler};
+
+  drv = haskellPackages.callPackage f {};
+
 in
-  pkgs.haskellPackages.callPackage ./default.nix { }
+  drv
