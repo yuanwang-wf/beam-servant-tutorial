@@ -2,26 +2,42 @@
 
 * Setup 
 If you already have a produtive haskell development environment, please skip this section.
-Setuping a development environment is probably the worst place about picking any new language.
+Setuping a development environment is probably the worst part in learning a new language.
 
 spacemacs + nix + ghcide
+stack + haskell-ide-engine
 ** Editors
   We can setup a decent haskell development environment with emacs, vim or vscode.
 ** nix, stack or just plain cabal 
 The last I want to do is to drag anyone into so call build tool war.
+https://cah6.github.io/technology/nix-haskell-1/
+https://github.com/cah6/haskell-nix-skeleton-1
+https://nixos.org/nixpkgs/manual/#haskell
+
 ** editor support
 - [[https://github.com/haskell/haskell-ide-engine][haskell-ide-engine]]
 - [[https://github.com/digital-asset/ghcide][ghcide]]
 - [[https://github.com/jyp/dante][dante]]
 - [[https://github.com/ndmitchell/ghcid][ghcid]] 
-- [[https://github.com/leksah/leks][Leksah]] (a truely IDE for haskell)
+- [[https://github.com/leksah/leks][Leksah]] (an IDE for haskell)
 *** haskell-ide-engine
 Currently, hie has something [[https://github.com/haskell/haskell-ide-engine/issues/1376][issues]] work with cabal 3.
-
+*** ghcide
+[[https://github.com/hercules-ci/ghcide-nix][install with nix]]
 * Hello World (or hello alpaca ?)
 I really enjoy [[https://twitter.com/rabbitonweb][Paweł Szulc's ]][[https://www.youtube.com/watch?v=idU7GdlfP9Q][talk]] at Lambda World 2019. 
-[[https://haskell-servant.readthedocs.io/en/v0.8/tutorial/index.html][
-Servant Tutorial]] 
+** [[https://haskell-servant.readthedocs.io/en/v0.8/tutorial/index.html][Servant Tutorial]] 
+
+Outter level we need ([[https://hackage.haskell.org/package/warp][warp]] package) 
+
+#+BEGIN_SRC haskell
+import Network.Wai.Handler.Warp (run)
+
+main :: IO ()
+main = run 8081 app
+#+END_SRC
+
+[[https://www.stackage.org/haddock/nightly-2019-11-17/warp-3.3.4/Network-Wai-Handler-Warp.html#v:run][run]] :: Port -> Application -> IO ()
 
 * References
 - https://blog.latukha.com/NixOS-HIE-Emacs/
