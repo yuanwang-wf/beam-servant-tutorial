@@ -21,7 +21,11 @@ https://nixos.org/nixpkgs/manual/#haskell
 - [[https://github.com/ndmitchell/ghcid][ghcid]] 
 - [[https://github.com/leksah/leks][Leksah]] (an IDE for haskell)
 *** haskell-ide-engine
-Currently, hie has something [[https://github.com/haskell/haskell-ide-engine/issues/1376][issues]] work with cabal 3.
+Currently, hie has something [[https://github.com/haskell/haskell-ide-engine/issues/1376][issues]] work with cabal 3. So if you want to use haskell-ide-engine, you have to use cabal 2.4.10 or stack 
+install cabal 
+nixos-19-03 https://nixos.org/channels/nixos-19.03
+nix-env -iA nixos-19-03.cabal-install --dry-run                                                      22:07:22
+
 *** ghcide
 [[https://github.com/hercules-ci/ghcide-nix][install with nix]]
 * Hello World (or hello alpaca ?)
