@@ -1,4 +1,5 @@
-#+TITLE: A tutorial about servant and beam for haskell new commers 
+#+TITLE: A log about learning servant and beam
+#+OPTIONS: ^:nil
 
 * Setup 
 If you already have a produtive haskell development environment, please skip this section.
@@ -14,6 +15,14 @@ https://cah6.github.io/technology/nix-haskell-1/
 https://github.com/cah6/haskell-nix-skeleton-1
 https://nixos.org/nixpkgs/manual/#haskell
 
+*** install Nix
+*** install zsh intergration (optional)
+https://github.com/spwhitt/nix-zsh-completions
+https://github.com/chisui/zsh-nix-shell
+cannot get them to work
+
+/nix/store/vz3l1d2452785ckl81s9n4qxlikwz7az-cctools-binutils-darwin-wrapper/nix-support/setup-hook: line 140: ${role_pre}${cmd^^}=${cmd}: bad substitution
+
 ** editor support
 - [[https://github.com/haskell/haskell-ide-engine][haskell-ide-engine]]
 - [[https://github.com/digital-asset/ghcide][ghcide]]
@@ -21,10 +30,27 @@ https://nixos.org/nixpkgs/manual/#haskell
 - [[https://github.com/ndmitchell/ghcid][ghcid]] 
 - [[https://github.com/leksah/leks][Leksah]] (an IDE for haskell)
 *** haskell-ide-engine
-Currently, hie has something [[https://github.com/haskell/haskell-ide-engine/issues/1376][issues]] work with cabal 3. So if you want to use haskell-ide-engine, you have to use cabal 2.4.10 or stack 
-install cabal 
-nixos-19-03 https://nixos.org/channels/nixos-19.03
-nix-env -iA nixos-19-03.cabal-install --dry-run                                                      22:07:22
+Currently, hie has something [[https://github.com/haskell/haskell-ide-engine/issues/1376][issues]] work with cabal 3. So if you want to use haskell-ide-engine, you have to use cabal 2.4.10 or stack (stack uses cabal 2.4.10 internally). 
+
+#+BEGIN_SRC
+nix-channel --add https://nixos.org/channels/nixos-19.03 nixos-19-03
+nix-channel --update
+nix-env -iA nixos-19-03.cabal-install --dry-run
+#+END_SRC                                                    
+
+you can verify cabal version by `cabal --version`
+
+**** [[https://github.com/Infinisil/all-hies][install hie using nix]]
+make sure cachix is installed
+
+#+BEGIN_SRC bash
+cachix use all-hies
+nix-env -iA selection --arg selector 'p: { inherit (p) ghc865; }' -f https://github.com/infinisil/all-hies/tarball/master
+#+END_SRC
+**** Editor intergration
+https://github.com/haskell/haskell-ide-engine/#using-hie-with-spacemacs
+
+
 
 *** ghcide
 [[https://github.com/hercules-ci/ghcide-nix][install with nix]]
