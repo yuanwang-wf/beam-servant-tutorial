@@ -5,8 +5,7 @@
 If you already have a produtive haskell development environment, please skip this section.
 Setuping a development environment is probably the worst part in learning a new language.
 
-spacemacs + nix + ghcide
-stack + haskell-ide-engine
+nix + haskell-ide-engine
 ** Editors
   We can setup a decent haskell development environment with emacs, vim or vscode.
 ** nix, stack or just plain cabal 
@@ -14,15 +13,8 @@ The last I want to do is to drag anyone into so call build tool war.
 https://cah6.github.io/technology/nix-haskell-1/
 https://github.com/cah6/haskell-nix-skeleton-1
 https://nixos.org/nixpkgs/manual/#haskell
-
+https://www.srid.ca/haskell-nix.html
 *** install Nix
-*** install zsh intergration (optional)
-https://github.com/spwhitt/nix-zsh-completions
-https://github.com/chisui/zsh-nix-shell
-cannot get them to work
-
-/nix/store/vz3l1d2452785ckl81s9n4qxlikwz7az-cctools-binutils-darwin-wrapper/nix-support/setup-hook: line 140: ${role_pre}${cmd^^}=${cmd}: bad substitution
-
 ** editor support
 - [[https://github.com/haskell/haskell-ide-engine][haskell-ide-engine]]
 - [[https://github.com/digital-asset/ghcide][ghcide]]
@@ -49,9 +41,6 @@ nix-env -iA selection --arg selector 'p: { inherit (p) ghc865; }' -f https://git
 #+END_SRC
 **** Editor intergration
 https://github.com/haskell/haskell-ide-engine/#using-hie-with-spacemacs
-
-
-
 *** ghcide
 [[https://github.com/hercules-ci/ghcide-nix][install with nix]]
 * Hello World (or hello alpaca ?)
@@ -67,7 +56,9 @@ main :: IO ()
 main = run 8081 app
 #+END_SRC
 
-[[https://www.stackage.org/haddock/nightly-2019-11-17/warp-3.3.4/Network-Wai-Handler-Warp.html#v:run][run]] :: Port -> Application -> IO ()
+src_haskell[:exports code]{run :: Port -> Application -> IO ()}
+
+[[https://www.stackage.org/haddock/nightly-2019-11-17/warp-3.3.4/Network-Wai-Handler-Warp.html#v:run][run]]
 
 * References
 - https://blog.latukha.com/NixOS-HIE-Emacs/
