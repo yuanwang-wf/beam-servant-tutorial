@@ -1,5 +1,4 @@
-#+TITLE: A log about learning servant and beam
-#+OPTIONS: ^:nil
+#+TITLE: A tutorial about servant and beam for haskell newcomers 
 
 * Setup 
 If you already have a productive haskell development environment, please skip this section.
@@ -9,10 +8,20 @@ nix + haskell-ide-engine
 ** Editors
   We can setup a decent haskell development environment with emacs, vim or vscode.
 ** nix, stack or just plain cabal 
-The last I want to do is to drag anyone into so call build tool war.
+The last thing I want to do is to drag anyone into build tool war.
 https://cah6.github.io/technology/nix-haskell-1/
 https://github.com/cah6/haskell-nix-skeleton-1
 https://nixos.org/nixpkgs/manual/#haskell
+*** Cabal
+The easiest way to install cabal ang ghc should be [[https://www.haskell.org/ghcup/][ghcup]].
+https://github.com/haskell/ghcup#usage
+
+*** Why use nix
+https://github.com/target/lorri/tree/master/example
+https://github.com/aveltras/arohi-skeleton
+**** Lorri
+*** stack
+** IDE-like support
 https://www.srid.ca/haskell-nix.html
 *** install Nix
 *** TODO setup https://www.tweag.io/posts/2019-03-28-introducing-lorri.html
@@ -21,13 +30,14 @@ https://direnv.net/docs/hook.html
 ** editor support
 - [[https://github.com/haskell/haskell-ide-engine][haskell-ide-engine]]
 - [[https://github.com/digital-asset/ghcide][ghcide]]
-- [[https://github.com/jyp/dante][dante]]
+- [[https://github.com/jyp/dante][dante]]  (emacs plugin)
 - [[https://github.com/ndmitchell/ghcid][ghcid]] 
 - [[https://github.com/leksah/leks][Leksah]] (an IDE for haskell)
 *** haskell-ide-engine
+                                     
 Currently, hie has something [[https://github.com/haskell/haskell-ide-engine/issues/1376][issues]] work with cabal 3. So if you want to use haskell-ide-engine, you have to use cabal 2.4.10 or stack (stack uses cabal 2.4.10 internally). 
 
-#+BEGIN_SRC
+#+BEGIN_SRC sh
 nix-channel --add https://nixos.org/channels/nixos-19.03 nixos-19-03
 nix-channel --update
 nix-env -iA nixos-19-03.cabal-install --dry-run
@@ -45,7 +55,7 @@ nix-env -iA selection --arg selector 'p: { inherit (p) ghc865; }' -f https://git
 **** Editor intergration
 https://github.com/haskell/haskell-ide-engine/#using-hie-with-spacemacs
 *** ghcide
-[[https://github.com/hercules-ci/ghcide-nix][install with nix]]
+[[https://github.com/hercules-ci/ghcide-nix][install using nix]]
 * Hello World (or hello alpaca ?)
 I really enjoy [[https://twitter.com/rabbitonweb][Paweł Szulc's ]][[https://www.youtube.com/watch?v=idU7GdlfP9Q][talk]] at Lambda World 2019. 
 ** [[https://haskell-servant.readthedocs.io/en/v0.8/tutorial/index.html][Servant Tutorial]] 
