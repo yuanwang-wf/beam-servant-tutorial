@@ -1,33 +1,42 @@
-#+TITLE: A tutorial about servant and beam for haskell new commers 
+#+TITLE: A tutorial about servant and beam for haskell newcomers 
 
 * Setup 
 If you already have a produtive haskell development environment, please skip this section.
-Setuping a development environment is probably the worst part in learning a new language.
+Setuping a development environment could be the frustrating part in learning a new language.
 
-spacemacs + nix + ghcide
-stack + haskell-ide-engine
-** Editors
-  We can setup a decent haskell development environment with emacs, vim or vscode.
+- Build Tools
+- Editor integration
+- Setup a new haskell project
+
 ** nix, stack or just plain cabal 
-The last I want to do is to drag anyone into so call build tool war.
+The last thing I want to do is to drag anyone into build tool war.
 https://cah6.github.io/technology/nix-haskell-1/
 https://github.com/cah6/haskell-nix-skeleton-1
 https://nixos.org/nixpkgs/manual/#haskell
+*** Cabal
+The easiest way to install cabal ang ghc should be [[https://www.haskell.org/ghcup/][ghcup]].
+https://github.com/haskell/ghcup#usage
 
-** editor support
+*** Why use nix
+*** stack
+** IDE-like support
 - [[https://github.com/haskell/haskell-ide-engine][haskell-ide-engine]]
 - [[https://github.com/digital-asset/ghcide][ghcide]]
-- [[https://github.com/jyp/dante][dante]]
+- [[https://github.com/jyp/dante][dante]]  (emacs plugin)
 - [[https://github.com/ndmitchell/ghcid][ghcid]] 
 - [[https://github.com/leksah/leks][Leksah]] (an IDE for haskell)
 *** haskell-ide-engine
-Currently, hie has something [[https://github.com/haskell/haskell-ide-engine/issues/1376][issues]] work with cabal 3. So if you want to use haskell-ide-engine, you have to use cabal 2.4.10 or stack 
-install cabal 
+Currently, hie has something [[https://github.com/haskell/haskell-ide-engine/issues/1376][issues]] work with cabal 3. So if you want to use haskell-ide-engine, you have to use cabal 2.4.10 or stack.
+ 
+**** install cabal 2.4.10
+#+BEGIN_SRC bash
 nixos-19-03 https://nixos.org/channels/nixos-19.03
-nix-env -iA nixos-19-03.cabal-install --dry-run                                                      22:07:22
+nix-env -iA nixos-19-03.cabal-install --dry-run  
+#+END_SRC
+                                                
 
 *** ghcide
-[[https://github.com/hercules-ci/ghcide-nix][install with nix]]
+[[https://github.com/hercules-ci/ghcide-nix][install using nix]]
 * Hello World (or hello alpaca ?)
 I really enjoy [[https://twitter.com/rabbitonweb][Paweł Szulc's ]][[https://www.youtube.com/watch?v=idU7GdlfP9Q][talk]] at Lambda World 2019. 
 ** [[https://haskell-servant.readthedocs.io/en/v0.8/tutorial/index.html][Servant Tutorial]] 
