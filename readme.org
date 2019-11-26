@@ -17,9 +17,15 @@ The easiest way to install cabal ang ghc should be [[https://www.haskell.org/ghc
 https://github.com/haskell/ghcup#usage
 
 *** Why use nix
+
+**** Lorri
 https://github.com/target/lorri/tree/master/example
 https://github.com/aveltras/arohi-skeleton
-**** Lorri
+
+How to use nix
+
+usually we need three nix files for a haskell project. 
+
 *** stack
 ** IDE-like support
 https://www.srid.ca/haskell-nix.html
@@ -43,7 +49,7 @@ nix-channel --update
 nix-env -iA nixos-19-03.cabal-install --dry-run
 #+END_SRC                                                    
 
-you can verify cabal version by `cabal --version`
+you can verify cabal version by src_sh[:exports code]{cabal --version}
 
 **** [[https://github.com/Infinisil/all-hies][install hie using nix]]
 make sure cachix is installed

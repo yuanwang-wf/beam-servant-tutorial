@@ -7,11 +7,10 @@ mkDerivation {
   src = ./.;
   isLibrary = true;
   isExecutable = true;
-  libraryHaskellDepends = [ aeson base ];
-  executableHaskellDepends = [
-    aeson base containers servant servant-server warp
+  libraryHaskellDepends = [
+    aeson base containers servant servant-server
   ];
-  doHaddock = false;
+  executableHaskellDepends = [ base warp ];
   license = "unknown";
   hydraPlatforms = stdenv.lib.platforms.none;
 }
