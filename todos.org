@@ -3,7 +3,7 @@
 [[https://github.com/NixOS/nix-mode][nix-mode]]
 - add nix-mode to additional packages
 - `(add-to-list 'auto-mode-alist '("\\.nix\\'" . nix-mode))` to user-config
-* TODO figure out othr nix-mode commands
+* TODO figure out other nix-mode commands
    M-x nix-unpack 
    nix-build
    M-x nix-repl
@@ -13,7 +13,8 @@
 * DONE try the painless haskell servant example
   CLOSED: [2019-11-06 Wed 21:29]
 
-* Setup (currently spacemacs + nix + ghcide) 
+* DONE Setup (currently spacemacs + nix + ghcide) 
+  CLOSED: [2019-11-26 Tue 15:25]
 https://github.com/digital-asset/ghcide/issues/137
 
 https://stackoverflow.com/questions/58326843/equivalent-of-passing-p-zlib-argument-to-nix-shell-in-shell-nix/58349420#58349420
@@ -21,7 +22,8 @@ https://stackoverflow.com/questions/58326843/equivalent-of-passing-p-zlib-argume
 * TODO summary workflow
 how to add new dep, how to update nix file
 
-* TODO make nix-build works
+* DONE make nix-build works
+  CLOSED: [2019-11-26 Tue 15:25]
 figure out how to pass zlib 
 update beam-servant-server-tutorial.nix file
 

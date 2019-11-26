@@ -1,6 +1,5 @@
 #+TITLE: servant + beam + nix 
-
-Goal of this document is to track my learning experiensse 
+ 
 
 * Environments
 - GHC : 8.6.5
@@ -13,10 +12,12 @@ If you already have a productive haskell development environment, please skip th
 Setuping a development environment is probably the worst part in learning a new language.
 
 nix + haskell-ide-engine
-** Editors
-  We can setup a decent haskell development environment with emacs, vim or vscode.
-** nix, stack or just plain cabal 
+
+** to nix or not to nix 
 The last thing I want to do is to drag anyone into build tool war.
+
+If It Ain't Broke, Don't Nix it
+
 https://cah6.github.io/technology/nix-haskell-1/
 https://github.com/cah6/haskell-nix-skeleton-1
 https://nixos.org/nixpkgs/manual/#haskell
