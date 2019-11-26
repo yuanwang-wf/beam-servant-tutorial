@@ -2,7 +2,7 @@
 #+OPTIONS: ^:nil
 
 * Setup 
-If you already have a produtive haskell development environment, please skip this section.
+If you already have a productive haskell development environment, please skip this section.
 Setuping a development environment is probably the worst part in learning a new language.
 
 nix + haskell-ide-engine
@@ -15,6 +15,9 @@ https://github.com/cah6/haskell-nix-skeleton-1
 https://nixos.org/nixpkgs/manual/#haskell
 https://www.srid.ca/haskell-nix.html
 *** install Nix
+*** TODO setup https://www.tweag.io/posts/2019-03-28-introducing-lorri.html
+git@github.com:aveltras/arohi-skeleton.git
+https://direnv.net/docs/hook.html
 ** editor support
 - [[https://github.com/haskell/haskell-ide-engine][haskell-ide-engine]]
 - [[https://github.com/digital-asset/ghcide][ghcide]]
