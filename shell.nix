@@ -1,11 +1,11 @@
 { nixpkgs ? import <nixpkgs> {} , compiler ? "ghc865" }:
 let
-  myPackages = (import ./release1.nix {withHoogle = true; });
-   projectDrvEnv = myPackages.project1.env.overrideAttrs (oldAttrs: rec {
-    buildInputs = oldAttrs.buildInputs ++ [ 
-      nixpkgs.haskellPackages.cabal-install
-      nixpkgs.haskellPackages.hoogle
-    ];
-  });
+  inherit (nixpkgs) haskellPackages;
+  myPackages = import ./release.nix {inherit nixpkgs compiler; };
 in
-  projectDrvEnv
+  haskellPackages.shellFor {
+    withHoogle = true;
+    packages = p: [myPackages];
+    buildInputs =  with nixpkgs.haskellPackages;
+     [ hlint stylish-haskell ghcid hoogle];
+}

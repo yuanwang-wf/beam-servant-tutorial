@@ -1,4 +1,12 @@
-#+TITLE: A log about servant and beam for haskell newcomers 
+#+TITLE: servant + beam + nix 
+
+Goal of this document is to track my learning experiensse 
+
+* Environments
+- GHC : 8.6.5
+- Cabal: 2.4.10
+- OS: MacOS 10.14.16
+- Nix: 2.3.1
 
 * Setup 
 If you already have a productive haskell development environment, please skip this section.
@@ -45,7 +53,6 @@ to find the current nixos versions
 https://github.com/NixOS/nixpkgs-channels/branches
 
 
-*** stack
 ** IDE-like support
 https://www.srid.ca/haskell-nix.html
 *** install Nix
@@ -71,7 +78,9 @@ nix-env -iA nixos-19-03.cabal-install --dry-run
 you can verify cabal version by src_sh[:exports code]{cabal --version}
 
 **** [[https://github.com/Infinisil/all-hies][install hie using nix]]
-make sure cachix is installed
+make sure cachix is installed src_sh[:exports code]{nix-env -iA cachix -f https://cachix.org/api/v1/install}
+
+
 
 #+BEGIN_SRC bash
 cachix use all-hies
@@ -98,7 +107,28 @@ src_haskell[:exports code]{run :: Port -> Application -> IO ()}
 
 [[https://www.stackage.org/haddock/nightly-2019-11-17/warp-3.3.4/Network-Wai-Handler-Warp.html#v:run][run]]
 
-** Setup local [[https://hoogle.haskell.org/][Hoogle]]
+** Setup local Dev tools
+[[https://hoogle.haskell.org/][Hoogle]]
+
+#+BEGIN_SRC nix
+{ nixpkgs ? import <nixpkgs> {} , compiler ? "ghc865" }:
+let
+  inherit (nixpkgs) haskellPackages;
+  myPackages = import ./release.nix {inherit nixpkgs compiler; };
+in
+  haskellPackages.shellFor {
+    withHoogle = true;
+    packages = p: [myPackages];
+    buildInputs =  with nixpkgs.haskellPackages;
+     [ hlint stylish-haskell ghcid hoogle];
+}
+#+END_SRC
+
+*** TODO pin cabal-install to 2.4.10
+#+BEGIN_SRC
+oldPkgs = import ./pkgs-from-json.nix { json = ./nixos-18-03.json; };
+buildInputs = [hlint ghcid oldPkgs.cabal-install]
+#+END_SRC
 
 * TODO checkout [[https://input-output-hk.github.io/haskell.nix/][input-output-hk haskell.nix]]
 * References
