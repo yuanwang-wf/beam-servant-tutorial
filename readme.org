@@ -21,6 +21,9 @@ The easiest way to install cabal ang ghc should be [[https://www.haskell.org/ghc
 https://github.com/haskell/ghcup#usage
 
 *** Why use nix
+https://github.com/target/lorri/tree/master/example
+https://github.com/aveltras/arohi-skeleton
+**** Lorri
 *** stack
 ** IDE-like support
 https://www.srid.ca/haskell-nix.html
