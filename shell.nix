@@ -19,8 +19,8 @@ in
   haskellPackages.shellFor {
     withHoogle = true;
     packages = p: [myPackages];
-    buildInputs =  
-     [ nixpkgs.haskellPackages.hlint 
+    buildInputs =
+     [ nixpkgs.haskellPackages.hlint
        nixpkgs.haskellPackages.stylish-haskell
        nixpkgs.haskellPackages.hoogle
        pinnedPkgs.cabal-install

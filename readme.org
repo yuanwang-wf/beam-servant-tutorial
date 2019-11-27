@@ -19,10 +19,10 @@ If It Ain't Broke, Don't Nix it
 curl https://nixos.org/nix/install | sh
 #+END_SRC
 
-** Update nix
+** [[https://nixos.org/nix/manual/#ch-upgrading-nix][Update nix]]
 
 #+BEGIN_SRC sh
-nix-channel --update; nix-env -uA nixpkgs
+nix-channel --update; nix-env -iA nixpkgs
 #+END_SRC
 
 ** Uninstall nix
@@ -57,8 +57,6 @@ https://github.com/NixOS/nixpkgs-channels/branches
 
 
 ** IDE-like support
-https://www.srid.ca/haskell-nix.html
-*** install Nix
 *** TODO setup https://www.tweag.io/posts/2019-03-28-introducing-lorri.html
 git@github.com:aveltras/arohi-skeleton.git
 https://direnv.net/docs/hook.html
@@ -91,8 +89,6 @@ nix-env -iA selection --arg selector 'p: { inherit (p) ghc865; }' -f https://git
 #+END_SRC
 **** Editor intergration
 https://github.com/haskell/haskell-ide-engine/#using-hie-with-spacemacs
-*** ghcide
-[[https://github.com/hercules-ci/ghcide-nix][install using nix]]
 * Hello World (or hello alpaca ?)
 I really enjoy [[https://twitter.com/rabbitonweb][Paweł Szulc's ]][[https://www.youtube.com/watch?v=idU7GdlfP9Q][talk]] at Lambda World 2019. 
 ** [[https://haskell-servant.readthedocs.io/en/v0.8/tutorial/index.html][Servant Tutorial]] 
@@ -125,12 +121,6 @@ in
     buildInputs =  with nixpkgs.haskellPackages;
      [ hlint stylish-haskell ghcid hoogle];
 }
-#+END_SRC
-
-*** TODO pin cabal-install to 2.4.10
-#+BEGIN_SRC
-oldPkgs = import ./pkgs-from-json.nix { json = ./nixos-18-03.json; };
-buildInputs = [hlint ghcid oldPkgs.cabal-install]
 #+END_SRC
 
 * TODO checkout [[https://input-output-hk.github.io/haskell.nix/][input-output-hk haskell.nix]]
