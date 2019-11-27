@@ -5,12 +5,12 @@ let
 
   bootstrap = import <nixpkgs> { };
 
-  nixpgs-19-03 = builtins.fromJSON (builtins.readFile ./nixpkgs-18-09.json);
+  nixpgs-19-03-beta = builtins.fromJSON (builtins.readFile ./nixpkgs-19-03-beta.json);
 
   src = bootstrap.fetchFromGitHub {
     owner = "NixOS";
     repo  = "nixpkgs";
-    inherit (nixpgs-19-03) rev sha256;
+    inherit (nixpgs-19-03-beta) rev sha256;
   };
 
   pinnedPkgs = import src { };

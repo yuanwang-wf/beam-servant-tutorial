@@ -22,7 +22,6 @@ curl https://nixos.org/nix/install | sh
 ** Update nix
 
 #+BEGIN_SRC sh
-
 nix-channel --update; nix-env -uA nixpkgs
 #+END_SRC
 
