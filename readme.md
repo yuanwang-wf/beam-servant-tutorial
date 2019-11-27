@@ -1,19 +1,16 @@
 - [Environments](#sec-1)
 - [To nix or not to nix](#sec-2)
   - [Install nix](#sec-2-1)
-  - [Update nix](#sec-2-2)
+  - [[Update nix](https://nixos.org/nix/manual/#ch-upgrading-nix)](#sec-2-2)
   - [Uninstall nix](#sec-2-3)
     - [Why use nix](#sec-2-3-1)
   - [IDE-like support](#sec-2-4)
-    - [install Nix](#sec-2-4-1)
-    - [setup <https://www.tweag.io/posts/2019-03-28-introducing-lorri.html>](#sec-2-4-2)
+    - [setup <https://www.tweag.io/posts/2019-03-28-introducing-lorri.html>](#sec-2-4-1)
   - [editor support](#sec-2-5)
     - [haskell-ide-engine](#sec-2-5-1)
-    - [ghcide](#sec-2-5-2)
 - [Hello World (or hello alpaca ?)](#sec-3)
   - [[Servant Tutorial](https://haskell-servant.readthedocs.io/en/v0.8/tutorial/index.html)](#sec-3-1)
   - [Setup local Dev tools](#sec-3-2)
-    - [pin cabal-install to 2.4.10](#sec-3-2-1)
 - [checkout [input-output-hk haskell.nix](https://input-output-hk.github.io/haskell.nix/)](#sec-4)
 - [References](#sec-5)
 
@@ -39,10 +36,10 @@ If It Ain't Broke, Don't Nix it
 curl https://nixos.org/nix/install | sh
 ```
 
-## Update nix<a id="sec-2-2"></a>
+## [Update nix](https://nixos.org/nix/manual/#ch-upgrading-nix)<a id="sec-2-2"></a>
 
 ```sh
-nix-channel --update; nix-env -uA nixpkgs
+nix-channel --update; nix-env -iA nixpkgs
 ```
 
 ## Uninstall nix<a id="sec-2-3"></a>
@@ -75,11 +72,7 @@ rm -rf /nix
 
 ## IDE-like support<a id="sec-2-4"></a>
 
-<https://www.srid.ca/haskell-nix.html>
-
-### install Nix<a id="sec-2-4-1"></a>
-
-### TODO setup <https://www.tweag.io/posts/2019-03-28-introducing-lorri.html><a id="sec-2-4-2"></a>
+### TODO setup <https://www.tweag.io/posts/2019-03-28-introducing-lorri.html><a id="sec-2-4-1"></a>
 
 git@github.com:aveltras/arohi-skeleton.git <https://direnv.net/docs/hook.html>
 
@@ -116,10 +109,6 @@ you can verify cabal version by `cabal --version`
 
     <https://github.com/haskell/haskell-ide-engine/#using-hie-with-spacemacs>
 
-### ghcide<a id="sec-2-5-2"></a>
-
-[install using nix](https://github.com/hercules-ci/ghcide-nix)
-
 # Hello World (or hello alpaca ?)<a id="sec-3"></a>
 
 I really enjoy [Paweł Szulc's ](https://twitter.com/rabbitonweb)[talk](https://www.youtube.com/watch?v=idU7GdlfP9Q) at Lambda World 2019.
@@ -155,13 +144,6 @@ in
     buildInputs =  with nixpkgs.haskellPackages;
      [ hlint stylish-haskell ghcid hoogle];
 }
-```
-
-### TODO pin cabal-install to 2.4.10<a id="sec-3-2-1"></a>
-
-```
-oldPkgs = import ./pkgs-from-json.nix { json = ./nixos-18-03.json; };
-buildInputs = [hlint ghcid oldPkgs.cabal-install]
 ```
 
 # TODO checkout [input-output-hk haskell.nix](https://input-output-hk.github.io/haskell.nix/)<a id="sec-4"></a>

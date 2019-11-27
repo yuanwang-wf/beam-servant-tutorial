@@ -19,11 +19,10 @@ in
   haskellPackages.shellFor {
     withHoogle = true;
     packages = p: [myPackages];
-    buildInputs =
-     [ nixpkgs.haskellPackages.hlint
-       nixpkgs.haskellPackages.stylish-haskell
-       nixpkgs.haskellPackages.hoogle
-       pinnedPkgs.cabal-install
-       (all-hies.selection {selector = p: {inherit (p) ghc865; };}) 
-     ];
+    buildInputs = with nixpkgs.haskellPackages;
+     [ hlint
+       stylish-haskell
+       hoogle
+       (all-hies.selection {selector = p: {inherit (p) ghc865; };})
+     ] ++ [pinnedPkgs.cabal-install];
 }
