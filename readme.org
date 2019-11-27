@@ -3,12 +3,11 @@
 
 * Environments
 - GHC : 8.6.5
-- Cabal: 2.4.10
+- Cabal: 2.4.1.0
 - OS: MacOS 10.14.16
 - Nix: 2.3.1
 - Editor: Spacemacs
 - "IDE": haskell-ide-engine 0.13.0.0 x86_64 ghc-8.6.5
-
 
 * To nix or not to nix 
 The last thing I want to do is to drag anyone into build tool war.
@@ -23,7 +22,8 @@ curl https://nixos.org/nix/install | sh
 ** Update nix
 
 #+BEGIN_SRC sh
-nix-channel --update; nix-env -iA nixpkgs
+
+nix-channel --update; nix-env -uA nixpkgs
 #+END_SRC
 
 ** Uninstall nix
@@ -34,7 +34,7 @@ rm -rf /nix
 
 
 *** Why use nix
-
+    
 **** Lorri
 https://github.com/target/lorri/tree/master/example
 https://github.com/aveltras/arohi-skeleton
@@ -50,6 +50,8 @@ pin down nix packages
 #+BEGIN_SRC shell
 nix-prefetch-git https://github.com/NixOS/nixpkgs.git 19.09 > nixpkgs-19-09.json
 #+END_SRC
+
+https://github.com/data61/fp-course/blob/master/nix/nixpkgs.nix
 
 to find the current nixos versions
 https://github.com/NixOS/nixpkgs-channels/branches
