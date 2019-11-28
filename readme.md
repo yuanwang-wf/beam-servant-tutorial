@@ -4,10 +4,9 @@
   - [[Update nix](https://nixos.org/nix/manual/#ch-upgrading-nix)](#sec-2-2)
   - [Uninstall nix](#sec-2-3)
     - [Why use nix](#sec-2-3-1)
-  - [IDE-like support](#sec-2-4)
-    - [setup <https://www.tweag.io/posts/2019-03-28-introducing-lorri.html>](#sec-2-4-1)
-  - [editor support](#sec-2-5)
-    - [haskell-ide-engine](#sec-2-5-1)
+  - [editor support](#sec-2-4)
+    - [haskell-ide-engine](#sec-2-4-1)
+  - [Lorri](#sec-2-5)
 - [Hello World (or hello alpaca ?)](#sec-3)
   - [[Servant Tutorial](https://haskell-servant.readthedocs.io/en/v0.8/tutorial/index.html)](#sec-3-1)
   - [Setup local Dev tools](#sec-3-2)
@@ -70,13 +69,7 @@ rm -rf /nix
     
     to find the current nixos versions <https://github.com/NixOS/nixpkgs-channels/branches>
 
-## IDE-like support<a id="sec-2-4"></a>
-
-### TODO setup <https://www.tweag.io/posts/2019-03-28-introducing-lorri.html><a id="sec-2-4-1"></a>
-
-git@github.com:aveltras/arohi-skeleton.git <https://direnv.net/docs/hook.html>
-
-## editor support<a id="sec-2-5"></a>
+## editor support<a id="sec-2-4"></a>
 
 -   [haskell-ide-engine](https://github.com/haskell/haskell-ide-engine)
 -   [ghcide](https://github.com/digital-asset/ghcide)
@@ -84,7 +77,7 @@ git@github.com:aveltras/arohi-skeleton.git <https://direnv.net/docs/hook.html>
 -   [ghcid](https://github.com/ndmitchell/ghcid)
 -   [Leksah](https://github.com/leksah/leks) (an IDE for haskell)
 
-### haskell-ide-engine<a id="sec-2-5-1"></a>
+### haskell-ide-engine<a id="sec-2-4-1"></a>
 
 Currently, hie has something [issues](https://github.com/haskell/haskell-ide-engine/issues/1376) work with cabal 3. So if you want to use haskell-ide-engine, you have to use cabal 2.4.10 or stack (stack uses cabal 2.4.10 internally).
 
@@ -108,6 +101,12 @@ you can verify cabal version by `cabal --version`
 2.  Editor intergration
 
     <https://github.com/haskell/haskell-ide-engine/#using-hie-with-spacemacs>
+
+## Lorri<a id="sec-2-5"></a>
+
+install direnv setup <https://www.tweag.io/posts/2019-03-28-introducing-lorri.html>
+
+git@github.com:aveltras/arohi-skeleton.git <https://direnv.net/docs/hook.html>
 
 # Hello World (or hello alpaca ?)<a id="sec-3"></a>
 
@@ -144,6 +143,21 @@ in
     buildInputs =  with nixpkgs.haskellPackages;
      [ hlint stylish-haskell ghcid hoogle];
 }
+```
+
+workflow
+
+```shell
+lorri daemon &
+emacs . &
+```
+
+we still need beam-servant-tutorial.cabal, b/c
+
+```sh
+unpacking sources
+unpacking source archive /nix/store/nf9hhcmb9a0s6qr2y1zd3lj5d36shjyj-beam-servant-tutorial.cabal
+do not know how to unpack source archive /nix/store/nf9hhcmb9a0s6qr2y1zd3lj5d36shjyj-beam-servant-tutorial.cabal
 ```
 
 # TODO checkout [input-output-hk haskell.nix](https://input-output-hk.github.io/haskell.nix/)<a id="sec-4"></a>
