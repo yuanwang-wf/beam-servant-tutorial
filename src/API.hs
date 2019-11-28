@@ -13,13 +13,18 @@ import User
 
 -- "users" say 
 type UserAPI1 = "users" :> Get '[JSON] [User]
--- type UserAPI2 = "users" :>
+type UserAPI2 = "users" :> Get '[JSON] [User]
+               :<|> "albert" :> Get '[JSON] User
+               :<|> "issac"  :> Get '[JSON] User
 
 server1 :: Server UserAPI1
 server1 = return users1
 
-userAPI :: Proxy UserAPI1
+server2 :: Server UserAPI2
+server2 = return users1 :<|> return albert :<|> return issac 
+
+userAPI :: Proxy UserAPI2
 userAPI = Proxy
 
 app1 :: Application
-app1 = serve userAPI server1
+app1 = serve userAPI server2

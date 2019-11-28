@@ -1,5 +1,6 @@
-{ mkDerivation, aeson, base, containers, servant, servant-server
-, stdenv, time, warp
+{ mkDerivation, aeson, base, beam-core, beam-migrate, beam-sqlite
+, containers, servant, servant-server, sqlite-simple, stdenv, text
+, time, warp
 }:
 mkDerivation {
   pname = "beam-servant-tutorial";
@@ -8,7 +9,8 @@ mkDerivation {
   isLibrary = true;
   isExecutable = true;
   libraryHaskellDepends = [
-    aeson base containers servant servant-server time
+    aeson base beam-core beam-migrate beam-sqlite containers servant
+    servant-server sqlite-simple text time
   ];
   executableHaskellDepends = [ base warp ];
   license = "unknown";
