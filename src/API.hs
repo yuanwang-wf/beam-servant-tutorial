@@ -13,7 +13,7 @@ import User
 
 -- "users" say 
 type UserAPI1 = "users" :> Get '[JSON] [User]
-type UserAPI2 = "users" :>
+-- type UserAPI2 = "users" :>
 
 server1 :: Server UserAPI1
 server1 = return users1
