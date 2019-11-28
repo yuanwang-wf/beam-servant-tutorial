@@ -56,10 +56,6 @@ to find the current nixos versions
 https://github.com/NixOS/nixpkgs-channels/branches
 
 
-** IDE-like support
-*** TODO setup https://www.tweag.io/posts/2019-03-28-introducing-lorri.html
-git@github.com:aveltras/arohi-skeleton.git
-https://direnv.net/docs/hook.html
 ** editor support
 - [[https://github.com/haskell/haskell-ide-engine][haskell-ide-engine]]
 - [[https://github.com/digital-asset/ghcide][ghcide]]
@@ -89,6 +85,13 @@ nix-env -iA selection --arg selector 'p: { inherit (p) ghc865; }' -f https://git
 #+END_SRC
 **** Editor intergration
 https://github.com/haskell/haskell-ide-engine/#using-hie-with-spacemacs
+
+** Lorri  
+   install direnv
+   setup https://www.tweag.io/posts/2019-03-28-introducing-lorri.html
+
+git@github.com:aveltras/arohi-skeleton.git
+https://direnv.net/docs/hook.html
 * Hello World (or hello alpaca ?)
 I really enjoy [[https://twitter.com/rabbitonweb][Paweł Szulc's ]][[https://www.youtube.com/watch?v=idU7GdlfP9Q][talk]] at Lambda World 2019. 
 ** [[https://haskell-servant.readthedocs.io/en/v0.8/tutorial/index.html][Servant Tutorial]] 
@@ -121,6 +124,21 @@ in
     buildInputs =  with nixpkgs.haskellPackages;
      [ hlint stylish-haskell ghcid hoogle];
 }
+#+END_SRC
+
+workflow 
+
+#+BEGIN_SRC shell
+lorri daemon &
+emacs . &
+#+END_SRC
+
+we still need beam-servant-tutorial.cabal, b/c
+
+#+BEGIN_SRC sh
+unpacking sources
+unpacking source archive /nix/store/nf9hhcmb9a0s6qr2y1zd3lj5d36shjyj-beam-servant-tutorial.cabal
+do not know how to unpack source archive /nix/store/nf9hhcmb9a0s6qr2y1zd3lj5d36shjyj-beam-servant-tutorial.cabal
 #+END_SRC
 
 * TODO checkout [[https://input-output-hk.github.io/haskell.nix/][input-output-hk haskell.nix]]

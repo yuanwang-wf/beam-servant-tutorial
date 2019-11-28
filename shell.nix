@@ -1,7 +1,7 @@
 { nixpkgs ? import <nixpkgs> {} , compiler ? "ghc865" }:
 let
   inherit (nixpkgs) haskellPackages;
-   myPackages = import ./release.nix {inherit nixpkgs compiler; };
+  myPackages = haskellPackages.callCabal2nix "project" ./beam-servant-tutorial.cabal  {};
 
   bootstrap = import <nixpkgs> { };
 
