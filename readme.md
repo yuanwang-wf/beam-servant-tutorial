@@ -111,7 +111,12 @@ workflow
 ```shell
 lorri daemon &
 emacs . &
+ghcid -c 'cabal new-repl beam-servant-tutorial' -T API.main
 ```
+
+cabal new-repl seems only one package to to load
+
+need to figure the limitation of this approach <https://www.parsonsmatt.org/2018/05/19/ghcid_for_the_win.html> <https://binarin.ru/post/auto-reload-threepenny-gui/>
 
 we still need beam-servant-tutorial.cabal, b/c
 

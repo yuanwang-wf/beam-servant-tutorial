@@ -30,3 +30,6 @@ update beam-servant-server-tutorial.nix file
 * TODO extend alpaca api 
 to support update, reject create withing existing id
 * TODO write a release.nix for nix-build, other one for shell
+* TODO wire ghcid
+
+https://binarin.ru/post/auto-reload-threepenny-gui/

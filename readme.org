@@ -50,7 +50,6 @@ to find the current nixos versions
 https://github.com/NixOS/nixpkgs-channels/branches
 
 
-
 * Setup a haskell+nix project with hie 
 
 ** all major Haskell IDE-like efforts I am aware of 
@@ -121,7 +120,14 @@ workflow
 #+BEGIN_SRC shell
 lorri daemon &
 emacs . &
+ghcid -c 'cabal new-repl beam-servant-tutorial' -T API.main
 #+END_SRC
+
+cabal new-repl seems only one package to to load
+
+need to figure the limitation of this approach
+https://www.parsonsmatt.org/2018/05/19/ghcid_for_the_win.html
+https://binarin.ru/post/auto-reload-threepenny-gui/
 
 we still need beam-servant-tutorial.cabal, b/c
 

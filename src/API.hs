@@ -7,7 +7,7 @@ module API where
 import qualified Data.Map as M
 import           Data.Proxy
 import           Servant
-
+import           Network.Wai.Handler.Warp (run)
 import User
 
 
@@ -28,3 +28,6 @@ userAPI = Proxy
 
 app1 :: Application
 app1 = serve userAPI server2
+
+main :: IO ()
+main = run 8081 app1
